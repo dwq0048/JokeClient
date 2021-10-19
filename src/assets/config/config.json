@@ -1,0 +1,6 @@
+{
+    "host" : {
+        "protocal" : "https",
+        "domain" : "api.codeboard.vrchat.kr"
+    }
+}

@@ -1,0 +1,84 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($box) {
+    -webkit-box-sizing:$box;
+    -moz-box-sizing:$box;
+    -ms-box-sizing:$box;
+    -o-box-sizing:$box;
+    box-sizing:$box;
+}
+
+@mixin box-shadow($box) {
+    -webkit-box-shadow:$box;
+    -moz-box-shadow:$box;
+    box-shadow:$box;
+}
+
+@mixin text-shadow($box) {
+    -webkit-text-shadow:$box;
+    -moz-text-shadow:$box;
+    text-shadow:$box;
+}
+
+@mixin transform($data) {
+    -webkit-transform:$data;
+    -moz-transform:$data;
+    -ms-transform:$data;
+    -o-transform:$data;
+    transform:$data;
+}
+
+@mixin transition($data) {
+    -webkit-transition:$data;
+    -moz-transition:$data;
+    -ms-transition:$data;
+    -o-transition:$data;
+    transition:$data;
+}
+
+@mixin no-drag(){
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select:none;
+}
+
+@mixin after(){
+    content: " ";
+    display: block;
+    clear: block;
+}
+
+$media-tablet-max: 1199px;
+$media-computer-min: 1200px;
+
+$fontDF : "NS_L", "Apple SD Gothic Neo", 'Avenir', Helvetica, Arial, sans-serif;
+
+$font-color: #2c3e50;
+$font-size: 14px;
+
+$bg: #eaeaea;
+$bg-light: #f1f1f1;
+$bg-light-bold: #cccccc;
+
+$bg-black: #1a2026;
+$bg-black-light: #353535;
+$bg-black-bold: #111111;
+
+$bg-gray: #b9b9b9;
+
+$bg-blue: #508dc9;
+$bg-blue-light: #5fa4e9;
+$bg-blue-bold: #5188bf;
+
+$bg-orange: #ee8243;
+$bg-orange-light: #f79696;
+$bg-orange-bold: #c96429;
+
+$wrap: 1200px;

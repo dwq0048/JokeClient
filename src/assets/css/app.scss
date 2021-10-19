@@ -1,0 +1,298 @@
+/* @font-face { 
+    font-family: 'NS_T';
+    font-style: normal;
+    src:url( '/assets/font/Noto_Sans_KR/NotoSansKR-Thin.otf' );
+    src:url( '/assets/font/Noto_Sans_KR/NotoSansKR-Thin.otf' ) format('truetype');
+}
+
+@font-face { 
+    font-family: 'NS_M';
+    font-style: normal;
+    src:url( '/assets/font/Noto_Sans_KR/NotoSansKR-Medium.otf' );
+    src:url( '/assets/font/Noto_Sans_KR/NotoSansKR-Medium.otf' ) format('truetype');
+}
+
+@font-face { 
+    font-family: 'NS_B';
+    font-style: normal;
+    src:url( '/assets/font/Noto_Sans_KR/NotoSansKR-Bold.otf' );
+    src:url( '/assets/font/Noto_Sans_KR/NotoSansKR-Bold.otf' ) format('truetype');
+} */
+
+/* @keyframes nono {
+    0% {}
+    20% { @include transform(translateX(-5px)) }
+    40% { @include transform(translateX(5px)) }
+    60% { @include transform(translateX(-5px)) }
+    80% { @include transform(translateX(5px)) }
+    100% { @include transform(translateX(0px)) }
+} */
+
+@font-face { 
+    font-family: 'NS';
+    font-style: normal;
+    src:url( '../font/Noto_Sans_KR/NotoSansKR-Regular.otf' );
+    src:url( '../font/Noto_Sans_KR/NotoSansKR-Regular.otf' ) format('truetype');
+}
+
+@font-face { 
+    font-family: 'NS_L';
+    font-style: normal;
+    src:url( '../font/Noto_Sans_KR/NotoSansKR-Light.otf' );
+    src:url( '../font/Noto_Sans_KR/NotoSansKR-Light.otf' ) format('truetype');
+}
+
+@font-face { 
+    font-family: 'BN';
+    font-style: normal;
+    //src:url( '/assets/font/Bebas_Neue/BebasNeue-Regular.ttf' );
+    src:url( '../font/Bebas_Neue/BebasNeue-Regular.ttf' ) format('truetype');
+}
+
+@font-face { 
+    font-family: 'UO';
+    font-style: normal;
+    src:url( '../font/Unica_One/UnicaOne-Regular.otf' );
+    src:url( '../font/Unica_One/UnicaOne-Regular.ttf' ) format('truetype');
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, input, blockquote, div, button, textarea, select, option {
+    margin:0; padding:0; 
+    line-height: 1;
+    @include box-sizing(border-box);
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    @include box-sizing(border-box);
+}
+
+#app {
+    font-family: $fontDF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+}
+
+#app * {
+    @include box-sizing(border-box);
+}
+
+body {
+    background-color: #f4f5f7;
+}
+
+button, select, option, input, textarea {
+    font-family: $fontDF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.editor-content * {
+    h1 { font-size: 28px }
+    h2 { font-size: 24px }
+    h3 { font-size: 22px }
+    h4 { font-size: 20px }
+    h5 { font-size: 18px }
+    h6 { font-size: 16px }
+
+    div { outline: none; }
+
+
+    blockquote {
+        & {
+            background-color: #f1f1f1;
+            padding: 15px;
+            padding-left: 20px;
+            position: relative;
+            margin: 15px;
+        }
+
+        &:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: $bg-gray;
+        }
+    }
+
+    ul.checkbox {
+        & {
+            list-style-position: inside;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        & > li {
+            & {
+                display: block;
+            }
+
+            & > label {
+                & {
+                    vertical-align: middle;
+                }
+
+                & > .checkbox_input {
+                    display: none;    
+                }
+
+                & > .checkbox_text {
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                }
+
+                & > .checkbox_icon {
+                    & {
+                        vertical-align: middle;
+                        display: inline-block;
+                        width: 17px;
+                        height: 17px;
+                        background-color: #f1f1f1;
+                        border: 1px solid $bg-gray;
+                        border-radius: 2px;
+                        position: relative;
+                        cursor: pointer;
+                        @include transition(all .2s);
+                    }
+        
+                    &:hover {
+                        background-color: $bg-light-bold;
+                        @include transition(all .2s);
+                    }
+        
+                    &:active {
+                        background-color: $bg-gray;
+                        @include transition(all .2s);
+                    }
+                    
+                    & > div {
+                        & {
+                            position: absolute;
+                            display: none;
+                            width: 10px;
+                            height: 10px;
+                            left: 1px;
+                            top: 0px;
+                        }
+
+                        & > div {
+                            & {
+                                width: 10px;
+                                height: 10px;
+                                position: relative;
+                                @include transform( rotate(-135deg) );
+                            }
+
+                            &:after {
+                                content: " ";
+                                display: block;
+                                width: 6px;
+                                height: 2px;
+                                background-color: #333;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            }
+
+                            &:before {
+                                content: " ";
+                                display: block;
+                                width: 2px;
+                                height: 10px;
+                                background-color: #333;
+                                top: 0;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+
+                & > .checkbox_input:checked + div > div {
+                    & {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        & {
+            list-style-position: inside;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        & > li {
+            & {
+                padding-bottom: 5px;
+            }
+
+            & > * {
+                display: inline;
+            }
+        }
+    }
+
+    ol {
+        & {
+            list-style-position: inside;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        & > li {
+            & {
+                padding-bottom: 5px;
+            }
+
+            & > * {
+                display: inline;
+            }
+        }
+    }
+}
+
+.bounce {
+    & {
+        @include transform(translateY(100px));
+        @include transition(.2s all);
+    }
+
+    &.done {
+        & {
+            @include transform(translateY(0px));
+            animation-duration: 1s;
+            animation-name: bounce;
+            @include transition(.2s all);
+        }
+    }
+}
+
+@keyframes bounce {
+    0% { @include transform(translateY(100px)); }
+    20% { @include transform(translateY(-15px)); }
+    40% { @include transform(translateY(5px)); }
+    60% { @include transform(translateY(-5px)); }
+    80% { @include transform(translateY(0px)); }
+    100% { @include transform(translateY(0px)); }
+}
+
+@keyframes nono {
+    0% {}
+    20% { @include transform(translateX(-5px)) }
+    40% { @include transform(translateX(5px)) }
+    60% { @include transform(translateX(-5px)) }
+    80% { @include transform(translateX(5px)) }
+    100% { @include transform(translateX(0px)) }
+}
