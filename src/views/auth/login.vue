@@ -99,20 +99,9 @@ export default {
 			data.fs.append('USER_EMAIL', this.Auth.email.value);
 			data.fs.append('USER_PASSWORD', this.Auth.password.value);
 			data.fs.append('cookie', (navigator.cookieEnabled) ? true : false);
-			data.fs.append('session', (sessionStorage) ? true : false);
-			data.fs.append('local', (localStorage) ? true : false);
 			data.fs.append('visitorId', visitorId);
 
 			this.USER_LOGIN(data).then((req) => {
-				if(req.data.issued){
-					const UID = VueCookies.get('GUEST_UD');
-					if(sessionStorage){
-						sessionStorage.setItem('GUEST_UD', UID) 
-					};
-					if(localStorage){
-						localStorage.setItem('GUEST_UD', UID)
-					};
-				}
 				this.$router.push({ path : '/' });
 			}).catch((err) => {
 				console.log(err);

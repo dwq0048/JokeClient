@@ -162,8 +162,6 @@ const User = {
 			const UID = VueCookies.get('GUEST_UD');
 			const object = {
 				'cookie' : (navigator.cookieEnabled) ? true : false,
-				'session' : (sessionStorage) ? true : false,
-				'local' : (localStorage) ? true : false,
 				'visitorId' : visitorId
 			};
 
@@ -180,25 +178,6 @@ const User = {
 						resolve({ state : 'uuid' });
 					}else if(req.data.status == "success"){
 						let isToken = false;
-						let user = {};
-						// UUID가 존재할 때 채크목록
-							//	=> UUID가 정상적인지 체크
-						if(state.USER_UD != VueCookies.get('GUEST_UD')){
-							if(sessionStorage){
-								try{
-									(sessionStorage.getItem('GUEST_UD') != UID) ? reject({ state: 'uuid' }) : undefined;
-								}catch(e){
-									reject({ state : 'uuid' });
-								}
-							}
-							if(localStorage){
-								try{
-									(localStorage.getItem('GUEST_UD') != UID) ? reject({ state : 'uuid' }) : undefined;
-								}catch(e){
-									reject({ state : 'uuid' });
-								}
-							}
-						}
 						commit('SET_UD', UID);
 						// 토큰이 있을 경우
 						if(typeof req.data.user == 'object'){

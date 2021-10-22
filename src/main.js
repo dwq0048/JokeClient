@@ -24,6 +24,7 @@ const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon);
 app.use(store).use(router).mount('#app');
 
+/*
 if(sessionStorage || localStorage){
 	window.addEventListener('storage', (event) => {
 		const UID = VueCookies.get('GUEST_UD');
@@ -31,3 +32,4 @@ if(sessionStorage || localStorage){
 		(localStorage) ? localStorage.setItem('GUEST_UD', (typeof event.newValue == 'string') ? event.newValue + 'abe94wews' : UID) : undefined;
 	});	
 }
+*/
