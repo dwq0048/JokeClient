@@ -1,24 +1,12 @@
-# client
+# JokerNews 입니다.
 
-## Project setup
+## 프로젝트 설명
+```
+가짜뉴스를 올리는 커뮤니티 형식을 생각하고 제작하고 있습니다.
+```
+
+## Project Start
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
